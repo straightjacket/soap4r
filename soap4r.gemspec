@@ -4,13 +4,14 @@
 require 'rubygems'
 SPEC = Gem::Specification.new do |s|
   s.name = "soap4r-straightjacket"
-  s.version = "1.5.8"
+  s.version = "1.5.9"
   s.date = "2007-09-24"
   s.author = "NAKAMURA, Hiroshi"
   s.email = "nahi@ruby-lang.org"
   s.homepage = "http://dev.ctor.org/soap4r"
   s.platform = Gem::Platform::RUBY
   s.summary = "An implementation of SOAP 1.1 for Ruby."
+  s.description = "#{s.summary} Adding some tweaks to work with Ruby 1.9"
   s.files = Dir.glob("{bin,lib,test}/**/*")
   s.require_path = "lib"
   s.executables = [ "wsdl2ruby.rb", "xsd2ruby.rb" ]
