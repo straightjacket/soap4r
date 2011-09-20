@@ -236,24 +236,24 @@ module GenSupport
 private
 
   def trim_eol(str)
-    str.each_line { |line|
+    str.each_char.collect { |line|
       line.sub(/\r?\n\z/, "") + "\n"
-    }
+    }.join
   end
 
   def trim_indent(str)
     indent = nil
-    str = str.each_line { |line| untab(line) }
-    str.each_line do |line|
+    str = str.each_char.collect { |line| untab(line) }.join
+    str.each do |line|
       head = line.index(/\S/)
       if !head.nil? and (indent.nil? or head < indent)
         indent = head
       end
     end
     return str unless indent
-    str.each_line { |line|
+    str.each_char.collect { |line|
       line.sub(/^ {0,#{indent}}/, "")
-    }
+    }.join
   end
 
   def untab(line, ts = 8)
