@@ -143,7 +143,7 @@ class SOAPMethod < SOAPStruct
   def get_paramtypes(names)
     types = []
     @signature.each do |io_type, name, type_qname|
-      if type_qname && idx = names.index(name)
+      if type_qname && idx = names.key(name)
         types[idx] = type_qname
       end
     end
@@ -230,7 +230,7 @@ private
     mapped_class = SOAPMethod.parse_mapped_class(param.mapped_class)
     qname = param.qname
     if qname.nil? and mapped_class
-      qname = TypeMap.index(mapped_class)
+      qname = TypeMap.key(mapped_class)
     end
     case param.io_type
     when IN
