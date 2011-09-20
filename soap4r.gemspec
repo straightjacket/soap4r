@@ -3,7 +3,7 @@
 
 require 'rubygems'
 SPEC = Gem::Specification.new do |s|
-  s.name = "soap4r-straightjacket"
+  s.name = "atti_soap4r"
   s.version = "1.5.10"
   s.date = "2007-09-24"
   s.author = "NAKAMURA, Hiroshi"

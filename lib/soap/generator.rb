@@ -270,7 +270,7 @@ private
 
   def get_encode_char_regexp
     ENCODE_CHAR_REGEXP[XSD::Charset.encoding] ||=
-      Regexp.new("[#{EncodeMap.keys.join}]", nil, XSD::Charset.encoding)
+      Regexp.new("[#{EncodeMap.keys.join}]", nil)
   end
 
   def find_handler(encodingstyle)
